@@ -32,5 +32,5 @@ A starting program is located in `word_frequency.py`.
 
 ## Links
 
-* [The `dict` type in Python 3](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
-* [f-strings in Python 3](https://realpython.com/python-f-strings/)
+- [The `dict` type in Python 3](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+- [f-strings in Python 3](https://realpython.com/python-f-strings/)
