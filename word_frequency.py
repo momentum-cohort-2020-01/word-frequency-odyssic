@@ -19,51 +19,39 @@ def open_file(file):
 
 def print_word_freq(file):
 
-    def lowercase_remove_punctuation():
+    lowercase_remove_punctuation(open_file(file))
 
-        lowercase_string = open_file(file)
-        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
-        for word in lowercase_string:
-            if word in punctuations:
-                lowercase_string = lowercase_string.replace(word, "").lower()
+def lowercase_remove_punctuation(open_file):
+
+    lowercase_string = open_file
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+    for word in lowercase_string:
+        if word in punctuations:
+            lowercase_string = lowercase_string.replace(word, "").lower()
     # working
-        print('lowercase string: ')
-        print(lowercase_string)
+    print('lowercase string: ')
+    print(lowercase_string)
 
-        split_string = lowercase_string.split(" ")
+    split_string = lowercase_string.split(" ")
     # working
-        print('Split String: ')
-        print(split_string)
+    print('Split String: ')
+    print(split_string)
 
-        for stop_word in split_string:
-            if stop_word in STOP_WORDS:
-                without_stop_words = split_string.remove(stop_word)
-    # not quite working! (was working previously)
-        print('without stop words :')
-        print(without_stop_words)
+    new_words = []
 
-        word_dict = {}
+    for word in split_string:
+        if word not in STOP_WORDS:
+            without_stop_words = new_words.append(word)
 
-        for instance in without_stop_words:
-            while len(without_stop_words) > 0:
-                if instance not in word_dict:
-                    word_dict.update({instance})
-                else:
-                    instance[instance] = 1
+    # for stop_word in split_string:
+    #     if stop_word in STOP_WORDS:
+    #         without_stop_words = split_string.replace(stop_word, '')
 
-        counted_list = {}
+    print('without stop words :')
+    print(without_stop_words)
 
-        counted_list = Counter(without_stop_words)
-
-        print('countedlist: ')
-        print(counted_list)
-
-
-#         word_dict[word] = len(instance)
-#         # print(f'{word} : '{count}')
-
-#     print(word_dict)
 
 if __name__ == "__main__":
     import argparse
